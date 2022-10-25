@@ -1,4 +1,4 @@
-Forked fron Lionh34rt, Updated script
+Forked from Lionh34rt, Updated script
 
 
 
