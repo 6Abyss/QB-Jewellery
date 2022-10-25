@@ -1,15 +1,23 @@
-# Description
-Players have to thermite the electrical box on the roof before the front door opens.
-https://i.gyazo.com/bc1591a71998ad2c84fb15c754f8a5df.png
+Forked fron Lionh34rt, Updated script
 
-Preview: https://www.youtube.com/watch?v=B0eqwvVh94s
 
-Original: https://github.com/qbcore-framework/qb-jewelery
+
 
 # Dependencies
 * [QBCore Framework](https://github.com/qbcore-framework)
 * [Memorygame by pushkart2](https://github.com/pushkart2/memorygame)
 * [qb-target by BerkieBb](https://github.com/BerkieBb/qb-target)
+
+
+
+
+
+https://www.youtube.com/watch?v=B0eqwvVh94s
+https://i.gyazo.com/bc1591a71998ad2c84fb15c754f8a5df.png
+
+
+
+
 
 # doorlock config:
 ```lua
