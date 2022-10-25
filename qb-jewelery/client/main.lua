@@ -129,8 +129,7 @@ local ThermiteEffect = function()
 end
 
 local PlantThermite = function()
-    TriggerServerEvent("QBCore:Server:RemoveItem", "thermite", 1)
-    TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["thermite"], "remove")
+    TriggerServerEvent('qb-jewellery:server:removethermite')
     RequestAnimDict("anim@heists@ornate_bank@thermal_charge")
     RequestModel("hei_p_m_bag_var22_arm_s")
     RequestNamedPtfxAsset("scr_ornate_heist")
@@ -172,6 +171,7 @@ RegisterNetEvent('qb-jewellery:client:Thermite', function()
             QBCore.Functions.TriggerCallback('qb-jewellery:server:getCops', function(cops)
                 if cops >= Config.RequiredCops then
                     PlantThermite()
+                    exports['ps-dispatch']:VangelicoRobbery()
                     exports["memorygame"]:thermiteminigame(12, 4, 4, 120,
                     function()
                         ThermiteEffect()
@@ -186,7 +186,7 @@ RegisterNetEvent('qb-jewellery:client:Thermite', function()
         else
             QBCore.Functions.Notify("You are missing something(s)..", "error", 2500)
         end
-    end, {"thermite", "lighter"})
+    end, {"thermite"})
 end)
 
 RegisterNetEvent('qb-jewellery:client:ThermitePtfx', function()
@@ -232,7 +232,7 @@ CreateThread(function()
         exports['qb-target']:AddBoxZone("JewelleryCase"..k, vector3(v.coords.x, v.coords.y, v.coords.z-1), 0.6, 1.2, {
             name = "JewelleryCase"..k,
             heading = v.coords.w,
-            debugPoly = true,
+            debugPoly = false,
             minZ = 37.65,
             maxZ = 38.35,
             }, {

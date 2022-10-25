@@ -22,7 +22,13 @@ RegisterNetEvent('qb-jewellery:server:setVitrineState', function(stateType, stat
     Config.Locations[k][stateType] = state
     TriggerClientEvent('qb-jewellery:client:setVitrineState', -1, stateType, state, k)
 end)
-
+RegisterNetEvent('qb-jewellery:server:removethermite', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if not Player then return end
+    Player.Functions.RemoveItem('thermite', 1)
+    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["thermite"], "remove") 
+end)
 RegisterNetEvent('qb-jewellery:server:vitrineReward', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
@@ -40,7 +46,7 @@ RegisterNetEvent('qb-jewellery:server:vitrineReward', function()
     else
         local amount = math.random(2, 4)
         if Player.Functions.AddItem("10kgoldchain", amount) then
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["10kgoldchain"], 'add')
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["rolex"], 'add')
         else
             TriggerClientEvent('QBCore:Notify', src, 'You have to much in your pocket..', 'error')
         end

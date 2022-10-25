@@ -33,6 +33,9 @@ Config.WhitelistedWeapons = {
     [`weapon_pistol`] = {
         ["timeOut"] = 10000
     },
+    [`weapon_glock`] = {
+        ["timeOut"] = 10000
+    },
     [`weapon_pistol_mk2`] = {
         ["timeOut"] = 10000
     },
